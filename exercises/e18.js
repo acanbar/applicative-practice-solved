@@ -8,14 +8,12 @@ import { maxBy } from '../exercises/e17';
 export function getGreatestDiscoveryYear(data) {
   const asteroidsArray = data.asteroids;
 
-  // Calculate the count of asteroid discoveries for each year
   const asteroidDiscoveriesByYear = asteroidsArray.reduce((accumulator, asteroid) => {
     const year = asteroid.discoveryYear;
     accumulator[year] = (accumulator[year] || 0) + 1;
     return accumulator;
   }, {});
 
-  // Find the year with the maximum discoveries
   const discoveryYearsArray = asteroidsArray.map(function(asteroid) {
     return asteroid.discoveryYear;
   });

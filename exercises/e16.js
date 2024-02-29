@@ -11,13 +11,10 @@
 
 export function find(array, callback) {
   for (let element of array) {
-    // Return the first element for which the callback is "truthy"
     if (callback(element)) {
       return element;
     }
   }
-
-  // If no element satisfies the condition, then undefined
   return undefined;
 }
 

@@ -9,28 +9,25 @@
  */
 export function minBy(array, cb) {
   if (array.length === 0) {
-    return undefined; // return undefined for empty arrays
+    return undefined;
   } 
-
-  let minValue = cb(array[0]); // Setup min value with the result of the callback (first element)
-  let minElement = array[0];  // Setup the min element (first element)
+  let minValue = cb(array[0]);
+  let minElement = array[0];
 
   for (let i = 1; i < array.length; i++) {
-    const currentValue = cb(array[i]);   // Calculate the callback value for the current element that is being looped
-    if (currentValue < minValue) {      // Check if currentValue is less than the minValue (current minimum)
-      minValue = currentValue;         // Update the minValue
-      minElement = array[i];          // Update the minElement
+    const currentValue = cb(array[i]);
+    if (currentValue < minValue) {
+      minValue = currentValue;
+      minElement = array[i];
     }
   }
-
-  return minElement;                // Return minElement with the minimum value based on the cb
+  return minElement;
 }                                                                                                   
 
 export function maxBy(array, cb) {
   if (array.length === 0) {
     return undefined;
   }
-
   let maxValue = cb(array[0]);
   let maxElement = array[0];
 
@@ -41,7 +38,6 @@ export function maxBy(array, cb) {
       maxElement = array[i];
     }
   }
-
   return maxElement;
 }
 
